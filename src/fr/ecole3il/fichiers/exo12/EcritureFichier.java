@@ -16,7 +16,7 @@ public class EcritureFichier {
 		try (Scanner scanner = new Scanner(System.in)) {
 			System.out.print("Entrez le chemin du fichier : ");
 			if (scanner.hasNextLine()) {
-				String cheminFicher = scanner.nextLine();
+				String cheminFichier = scanner.nextLine();
 				System.out.println("Entrez le contenu du fichier :");
 				List<String> lignes = new LinkedList<>();
 				String ligne = null;
@@ -30,7 +30,7 @@ public class EcritureFichier {
 						lignes.add(ligne);
 				} while (continuer);
 				try {
-					Path chemin = Paths.get(cheminFicher);
+					Path chemin = Paths.get(cheminFichier);
 					Files.write(chemin, lignes, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
 
 				} catch (IOException e) {
